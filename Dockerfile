@@ -1,9 +1,13 @@
 FROM ubuntu:14.04
 
-# Install LXDE, VNC server 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN dpkg --add-architecture i386
+RUN apt-get update 
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get install -y libc6:i386 lib32z1 lib32ncurses5 lib32bz2-1.0 libX11-6:i386 libice6:i386 libgl1-mesa-dri-lts-utopic:i386
+RUN apt-get install -y libgl1-mesa-glx-lts-utopic:i386 libsm6:i386 
+RUN apt-get install -y \
   wget \
-  uzip \
+  unzip \
   lxde-core \
   lxterminal \
   tightvncserver
@@ -24,7 +28,7 @@ RUN apt-get install -yqq wget unzip
 WORKDIR /tmp
 RUN wget http://ftp.squeak.org/5.0/Squeak-5.0-All-in-One.zip
 RUN unzip Squeak-5.0-All-in-One.zip 
-RUN yes | /tmp/Squeak-5.0-All-in-One/Squeak-5.0-All-in-One.app/Contents/LinuxAndWindows/install-libs32
+#RUN yes | /tmp/Squeak-5.0-All-in-One/Squeak-5.0-All-in-One.app/Contents/LinuxAndWindows/install-libs32
 
 CMD ["/opt/vnc.sh"]
 #CMD [/tmp/Squeak-$VERsiON-All-in-One/squeak.sh]
