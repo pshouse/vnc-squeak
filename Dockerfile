@@ -27,9 +27,9 @@ WORKDIR /tmp
 RUN wget http://ftp.squeak.org/5.0/Squeak-5.0-All-in-One.zip
 RUN unzip Squeak-5.0-All-in-One.zip 
 #RUN yes | /tmp/Squeak-5.0-All-in-One/Squeak-5.0-All-in-One.app/Contents/LinuxAndWindows/install-libs32
-RUN cp Squeak-5.0-All-in-One /opt/
-COPY Squeak5.0-15113.image
-COPY Squeak5.0-15113.changes
-COPY xstartup /root/.vnc/.
+RUN cp -r /tmp/Squeak-5.0-All-in-One /opt
+COPY Squeak5.0-15113.image /opt/Squeak-5.0-All-in-One/Squeak-5.0-All-in-One.app/Contents/Resources/
+COPY Squeak5.0-15113.changes /opt/Squeak-5.0-All-in-One/Squeak-5.0-All-in-One.app/Contents/Resources/
+COPY xstartup /root/.vnc/
 CMD ["/opt/vnc.sh"]
 #CMD [/tmp/Squeak-$VERsiON-All-in-One/squeak.sh]

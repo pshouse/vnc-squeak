@@ -6,5 +6,6 @@ xsetroot -solid grey
 #x-window-manager &
 # Fix to make GNOME work
 export XKL_XMODMAP_DISABLE=1
+
+/opt/Squeak-5.0-All-in-One/Squeak-5.0-All-in-One.app/Contents/LinuxAndWindows/Linux-i686/lib/squeak/5.0-3397/squeak /opt/Squeak-5.0-All-in-One/Squeak-5.0-All-in-One.app/Contents/Resources/Squeak5.0-15113.image &
 /etc/X11/Xsession
-/opt/Squeak-5.0-All-in-One/Squeak-5.0-All-in-One.app/Contents/LinuxAndWindows/Linux-i686/lib/squeak/5.0-3397/squeak /opt/Squeak-5.0-All-in-One/Squeak-5.0-All-in-One.app/Contents/Resources/Squeak5.0-15113.image
