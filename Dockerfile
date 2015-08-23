@@ -30,6 +30,8 @@ RUN unzip Squeak-5.0-All-in-One.zip
 RUN cp -r /tmp/Squeak-5.0-All-in-One /opt
 COPY Squeak5.0-15113.image /opt/Squeak-5.0-All-in-One/Squeak-5.0-All-in-One.app/Contents/Resources/
 COPY Squeak5.0-15113.changes /opt/Squeak-5.0-All-in-One/Squeak-5.0-All-in-One.app/Contents/Resources/
+#Update the VM
+COPY cogspurlinux/lib/squeak/5.0-3427/squeak /opt/Squeak-5.0-All-in-One/Squeak-5.0-All-in-One.app/Contents/LinuxAndWindows/Linux-i686/lib/squeak/5.0-3397/squeak
 COPY xstartup /root/.vnc/
 CMD ["/opt/vnc.sh"]
 #CMD [/tmp/Squeak-$VERsiON-All-in-One/squeak.sh]
